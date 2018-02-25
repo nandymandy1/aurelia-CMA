@@ -1,0 +1,27 @@
+<template>
+  <div class="container">
+    <h3>${heading}</h3>
+    <form submit.trigger="addCustomer()">
+      <input type="text" placeholder="Name" value.bind="customerName" class="u-full-width">
+      <input type="text" placeholder="Phone" value.bind="customerPhone" class="u-full-width">
+      <input type="text" placeholder="Email" value.bind="customerEmail" class="u-full-width">
+      <button type="submit" class="u-full-width"> Submit </button>
+    </form>
+
+    <table class="u-full-width">
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th></th>
+      </tr>
+      <tr repeat.for="customer of customers">
+        <td>${customer.name}</td>
+        <td>${customer.email}</td>
+        <td>${customer.phone}</td>
+        <td><button click.trigger="removeCustomer(customer)">Delete</button></td>
+      </tr>
+    </table>
+
+  </div>
+</template>
